@@ -1,0 +1,5 @@
+podman network create mssql-net
+podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Passw0rd" -p 1433:1433 -v mssql-data:/var/opt/mssql --name mssql-server -d mcr.microsoft.com/mssql/server:2022-latest
+
+https://www.congcuweb.net/text/accent.html
+https://docs.google.com/document/d/1kBNjG2mOWqWwJJkT9LsGneXvXSU55dtY/edit?tab=t.0
