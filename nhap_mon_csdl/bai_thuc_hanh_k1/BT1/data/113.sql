@@ -1,0 +1,22 @@
+-- CREATE TRIGGER trg_Check_HOADON_CTHD
+-- ON HOADON
+-- AFTER INSERT, UPDATE
+-- AS
+-- BEGIN
+--     IF EXISTS (
+--         SELECT 1
+--         FROM inserted i
+--         WHERE NOT EXISTS (
+--             SELECT 1
+--             FROM CTHD c
+--             WHERE c.SOHD = i.SOHD
+--         )
+--     )
+--     BEGIN
+--         RAISERROR ('Mỗi hóa đơn phải có ít nhất một chi tiết hóa đơn.', 16, 1);
+--         ROLLBACK TRANSACTION;
+--     END
+-- END;
+-- GO
+
+PRINT '(113) Moi mot hoa don phai co it nhat mot chi tiet hoa don. => PENDING';

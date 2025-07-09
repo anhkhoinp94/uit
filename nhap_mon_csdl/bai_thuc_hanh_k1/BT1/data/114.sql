@@ -1,0 +1,38 @@
+-- CREATE TRIGGER trg_Update_TRIGIA
+-- ON CTHD
+-- AFTER INSERT, UPDATE, DELETE
+-- AS
+-- BEGIN
+--     -- Cập nhật TRIGIA cho các hóa đơn bị ảnh hưởng
+--     UPDATE HOADON
+--     SET TRIGIA = (
+--         SELECT SUM(CT.SL * SP.GIA)
+--         FROM CTHD CT
+--         JOIN SANPHAM SP ON CT.MASP = SP.MASP
+--         WHERE CT.SOHD = HOADON.SOHD
+--     )
+--     WHERE SOHD IN (
+--         SELECT SOHD FROM inserted
+--         UNION
+--         SELECT SOHD FROM deleted
+--     );
+-- END;
+-- GO
+
+-- CREATE TRIGGER trg_Init_TRIGIA
+-- ON HOADON
+-- AFTER INSERT
+-- AS
+-- BEGIN
+--     UPDATE HOADON
+--     SET TRIGIA = (
+--         SELECT SUM(CT.SL * SP.GIA)
+--         FROM CTHD CT
+--         JOIN SANPHAM SP ON CT.MASP = SP.MASP
+--         WHERE CT.SOHD = HOADON.SOHD
+--     )
+--     WHERE SOHD IN (SELECT SOHD FROM inserted);
+-- END;
+-- GO
+
+PRINT '(114) Tri gia cua mot hoa don la tong thanh tien (so luong*don gia) cua cac chi tiet thuoc hoa don do. => PENDING';

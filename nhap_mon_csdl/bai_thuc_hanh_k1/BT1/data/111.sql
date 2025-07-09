@@ -1,0 +1,23 @@
+-- CREATE TRIGGER trg_Check_NGHD_vs_NGDK
+-- ON HOADON
+-- AFTER INSERT, UPDATE
+-- AS
+-- BEGIN
+--     IF EXISTS (
+--         SELECT 1
+--         FROM HOADON H
+--         JOIN KHACHHANG K ON H.MAKH = K.MAKH
+--         WHERE H.NGHD < K.NGDK
+--               AND EXISTS (
+--                   SELECT 1 FROM inserted i
+--                   WHERE i.SOHD = H.SOHD
+--               )
+--     )
+--     BEGIN
+--         RAISERROR ('Ngày mua hàng (NGHD) không được trước ngày đăng ký thành viên (NGDK).', 16, 1);
+--         ROLLBACK TRANSACTION;
+--     END
+-- END;
+-- GO
+
+PRINT '(111) Ngay mua hang (NGHD) cua mot khach hang thanh vien se lon hon hoac bang ngay khach hang do dang ky thanh vien (NGDK). => PENDING';

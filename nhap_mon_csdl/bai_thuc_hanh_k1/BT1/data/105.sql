@@ -1,5 +1,3 @@
-PRINT '(105) Sua kieu du lieu cua thuoc tinh GHICHU trong quan he SANPHAM thanh varchar(100).';
+ALTER TABLE SANPHAM DROP COLUMN GHICHU;
 
-ALTER TABLE SANPHAM ALTER COLUMN GHICHU VARCHAR(100);
-
-PRINT '(105) Done';
+PRINT '(105) Xoa thuoc tinh GHICHU trong quan he SANPHAM. => DONE';
