@@ -1,3 +1,0 @@
-ALTER TABLE SANPHAM DROP COLUMN GHICHU;
-
-PRINT '(105) Xoa thuoc tinh GHICHU trong quan he SANPHAM. => DONE';
